@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour {
 
         //grabs the rigidbody from the player object
         rig = GetComponent<Rigidbody2D>();
-		
+
 	}
 
     // Update is called once per frame
@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour {
 
         Vector3 movement = new Vector3(hAxis, vAxis, 0) * speed * Time.deltaTime;
         rig.MovePosition(transform.position + movement);
-
+        // 
     }
 
 }
