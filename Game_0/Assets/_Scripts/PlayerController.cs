@@ -28,32 +28,19 @@ public class PlayerController : MonoBehaviour {
         rig = GetComponent<Rigidbody2D>();
 		
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
 
         //variable for moving player left and right
         float hAxis = Input.GetAxis("Horizontal");
         //variable for moving player forward and backward
         float vAxis = Input.GetAxis("Vertical");
 
-        Vector3 movement = new Vector3(hAxis, vAxis, 0)*speed*Time.deltaTime;
+        Vector3 movement = new Vector3(hAxis, vAxis, 0) * speed * Time.deltaTime;
         rig.MovePosition(transform.position + movement);
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            //Bullet instantiation
-            GameObject tempBulletHolder = Instantiate(bullet,bulletPoint.transform.position,bulletPoint.transform.rotation);
-            tempBulletHolder.transform.Rotate(Vector3.left * 90);
-
-            //Retrieve the rigidbody component from the instantiated bullet and control it
-            Rigidbody tempRigidbody = tempBulletHolder.GetComponent<Rigidbody>();
-            //Tell the bullet object to be pushed forward
-            tempRigidbody.AddForce(transform.forward * bulletForwardForce);
-
-            //Basic cleanup, sets the bullet to be destroyed after a certain amount of time
-            Destroy(tempBulletHolder, bulletDestroyTime);
-        }
-
     }
+
 }
