@@ -10,24 +10,37 @@ public class PlayerController : MonoBehaviour {
     //variable for holding the player rigidbody
     private Rigidbody2D rig;
 
+    //location where the bullet will fire from
+    public GameObject bulletPoint;
+
+    //holds the prefab for the builet
+    public GameObject bullet;
+
+    //spped of the bullet
+    public float bulletForwardForce;
+
+    public float bulletDestroyTime = 5f;
+
 	// Use this for initialization
 	void Start () {
 
         //grabs the rigidbody from the player object
         rig = GetComponent<Rigidbody2D>();
-		
+
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
 
         //variable for moving player left and right
         float hAxis = Input.GetAxis("Horizontal");
         //variable for moving player forward and backward
         float vAxis = Input.GetAxis("Vertical");
 
-        Vector3 movement = new Vector3(hAxis, vAxis, 0)*speed*Time.deltaTime;
+        Vector3 movement = new Vector3(hAxis, vAxis, 0) * speed * Time.deltaTime;
         rig.MovePosition(transform.position + movement);
-		
-	}
+        // 
+    }
+
 }
