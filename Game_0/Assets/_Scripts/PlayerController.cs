@@ -21,6 +21,9 @@ public class PlayerController : MonoBehaviour {
 
     public float bulletDestroyTime = 5f;
 
+    //player health
+    public int playerHealth = 100;
+
 	// Use this for initialization
 	void Start () {
 
