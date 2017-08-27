@@ -6,10 +6,13 @@ public class ItemPickUp : MonoBehaviour {
 
     private string itemName;
     public PlayerController playerObject;
+    public int healthPickupV2 = 10;
 
 	// Use this for initialization
 	void Start () {
+        playerObject = FindObjectOfType<PlayerController>();
         itemName = this.gameObject.name;
+        Debug.Log(itemName);
 	}
 	
 	// Update is called once per frame
@@ -23,9 +26,11 @@ public class ItemPickUp : MonoBehaviour {
         {
             //Destroy(this.gameObject);
             this.gameObject.SetActive(false);
+            //Update health if item is a healthpack
             if(itemName == "Health")
             {
-                playerObject.playerHealth++;
+                playerObject.playerHealth += 50;
+                //Debug.Log(playerObject.playerHealth);
             }
         }
     }
