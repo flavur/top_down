@@ -13,7 +13,7 @@ public class HelloWorld : MonoBehaviour {
         changeColor(timerTest);
 
     }
-	
+
 	// Update is called once per frame
 	void Update () {
         if (Input.GetKeyDown(KeyCode.R))
@@ -27,7 +27,7 @@ public class HelloWorld : MonoBehaviour {
 
 	}
 
-    public void changeColor(int number)
+  public void changeColor(int number)
     {
         for (int myNumber = 0; myNumber < number; myNumber++)
         {
