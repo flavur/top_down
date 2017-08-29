@@ -5,7 +5,7 @@ using UnityEngine;
 public class ItemPickUp : MonoBehaviour {
 
     private string itemName;
-    public PlayerController playerObject;
+    private PlayerController playerObject;
     public int healthPickupV2 = 10;
 
 	// Use this for initialization
@@ -30,7 +30,7 @@ public class ItemPickUp : MonoBehaviour {
             if(itemName == "Health")
             {
                 playerObject.playerHealth += 50;
-                //Debug.Log(playerObject.playerHealth);
+                Debug.Log(playerObject.playerHealth);
             }
         }
     }
