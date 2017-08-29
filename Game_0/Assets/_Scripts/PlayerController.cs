@@ -23,12 +23,15 @@ public class PlayerController : MonoBehaviour {
 
     //player health
     public int playerHealth = 100;
+    public int currentHealth;
 
 	// Use this for initialization
 	void Start () {
 
         //grabs the rigidbody from the player object
         rig = GetComponent<Rigidbody2D>();
+
+        currentHealth = playerHealth;
 
 	}
 
@@ -43,7 +46,7 @@ public class PlayerController : MonoBehaviour {
 
         Vector3 movement = new Vector3(hAxis, vAxis, 0) * speed * Time.deltaTime;
         rig.MovePosition(transform.position + movement);
-        // 
+
     }
 
 }

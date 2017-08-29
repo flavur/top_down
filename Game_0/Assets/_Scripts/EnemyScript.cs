@@ -20,8 +20,8 @@ public class EnemyScript : MonoBehaviour {
     {
         if(collision.gameObject.tag == "Player")
         {
-            playerObject.playerHealth -= 20;
-            Debug.Log(playerObject.playerHealth);
+            playerObject.currentHealth -= 20;
+            Debug.Log(playerObject.currentHealth);
         }
     }
 }
