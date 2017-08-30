@@ -21,11 +21,17 @@ public class PlayerController : MonoBehaviour {
 
     public float bulletDestroyTime = 5f;
 
+    //player health
+    public float maxHealth = 100;
+    public float currentHealth;
+
 	// Use this for initialization
 	void Start () {
 
         //grabs the rigidbody from the player object
         rig = GetComponent<Rigidbody2D>();
+
+        currentHealth = maxHealth;
 
 	}
 
@@ -40,7 +46,7 @@ public class PlayerController : MonoBehaviour {
 
         Vector3 movement = new Vector3(hAxis, vAxis, 0) * speed * Time.deltaTime;
         rig.MovePosition(transform.position + movement);
-        // 
+
     }
 
 }
