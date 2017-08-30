@@ -27,9 +27,8 @@ public class LevelManager : MonoBehaviour {
     /// <summary>
     /// Scripts for health bar calculation
     /// </summary>
-    /// <param name="myHealth"></param>
-    public void SetHealthBar(int myHealth)
+    public void SetHealthBar(float myHealth)
     {
-        healthBar.transform.localScale = new Vector2(playerObject.currentHealth/playerObject.currentHealth, healthBar.transform.localScale.y);
+        healthBar.transform.localScale = new Vector2((Mathf.Clamp(myHealth, 0f, 1f)), healthBar.transform.localScale.y);
     }
 }

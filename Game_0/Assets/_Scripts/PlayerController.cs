@@ -22,8 +22,8 @@ public class PlayerController : MonoBehaviour {
     public float bulletDestroyTime = 5f;
 
     //player health
-    public int playerHealth = 100;
-    public int currentHealth;
+    public float maxHealth = 100;
+    public float currentHealth;
 
 	// Use this for initialization
 	void Start () {
@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour {
         //grabs the rigidbody from the player object
         rig = GetComponent<Rigidbody2D>();
 
-        currentHealth = playerHealth;
+        currentHealth = maxHealth;
 
 	}
 
