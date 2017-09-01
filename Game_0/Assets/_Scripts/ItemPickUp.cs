@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class ItemPickUp : MonoBehaviour {
 
-    private string itemName;
+    public string itemName;
     private PlayerController playerObject;
     public int healthPickupV2 = 10;
     public Vector2 itemPosition;
+    public GameObject item;
 
 	// Use this for initialization
 	void Start () {
         playerObject = FindObjectOfType<PlayerController>();
         itemName = this.gameObject.name;
         itemPosition = this.gameObject.transform.position;
-        Debug.Log(itemName);
+        item = this.gameObject;
+        //Debug.Log(itemName);
 	}
 	
 	// Update is called once per frame
@@ -36,11 +38,4 @@ public class ItemPickUp : MonoBehaviour {
             }
         }
     }
-
-    /*
-    public void RespawnItem()
-    {
-        this.gameObject.SetActive(false);
-    }
-    */
 }

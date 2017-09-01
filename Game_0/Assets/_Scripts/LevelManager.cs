@@ -7,7 +7,8 @@ public class LevelManager : MonoBehaviour {
     //Grab health bar gameobject
     public GameObject healthBar;
     //Grab player script
-    public PlayerController playerObject;
+    private PlayerController playerObject;
+    private ItemPickUp itemObject;
 
 	// Use this for initialization
 	void Start () {
@@ -16,17 +17,29 @@ public class LevelManager : MonoBehaviour {
         healthBar = GameObject.Find("bar");
         //grab the player script
         playerObject = FindObjectOfType<PlayerController>();
+        itemObject = FindObjectOfType<ItemPickUp>();
 
     }
 	
 	// Update is called once per frame
 	void Update () {
-		
+        if (itemObject.item.activeInHierarchy == false)
+        {
+            RespawnItem();
+        }
 	}
 
-    /// <summary>
-    /// Scripts for health bar calculation
-    /// </summary>
+    public void RespawnItem()
+    {
+        StartCoroutine("Respawn");
+    }
+
+    IEnumerator Respawn()
+    {
+        yield return new WaitForSeconds(3);
+        itemObject.item.SetActive(true);
+    }
+
     public void SetHealthBar(float myHealth)
     {
         healthBar.transform.localScale = new Vector2((Mathf.Clamp(myHealth, 0f, 1f)), healthBar.transform.localScale.y);
