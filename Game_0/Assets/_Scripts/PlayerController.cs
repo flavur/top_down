@@ -25,8 +25,12 @@ public class PlayerController : MonoBehaviour {
     public float maxHealth = 100;
     public float currentHealth;
 
-	// Use this for initialization
-	void Start () {
+    //dash speed
+    public float dashSpeed = 10f;
+    public float dashDistance = 10f;
+
+    // Use this for initialization
+    void Start () {
 
         //grabs the rigidbody from the player object
         rig = GetComponent<Rigidbody2D>();
@@ -46,6 +50,36 @@ public class PlayerController : MonoBehaviour {
 
         Vector3 movement = new Vector3(hAxis, vAxis, 0) * speed * Time.deltaTime;
         rig.MovePosition(transform.position + movement);
+
+        //setup dash move
+        if (hAxis == 1)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                rig.MovePosition(transform.position + movement * dashSpeed);
+            }
+        }
+        if (hAxis == -1)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                rig.MovePosition(transform.position + movement * dashSpeed);
+            }
+        }
+        if (vAxis == 1)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                rig.MovePosition(transform.position + movement * dashSpeed);
+            }
+        }
+        if (vAxis == -1)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                rig.MovePosition(transform.position + movement * dashSpeed);
+            }
+        }
 
     }
 
