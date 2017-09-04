@@ -51,7 +51,8 @@ public class PlayerController : MonoBehaviour {
         Vector3 movement = new Vector3(hAxis, vAxis, 0) * speed * Time.deltaTime;
         rig.MovePosition(transform.position + movement);
 
-        //setup dash move
+        /*
+         * //setup dash move
         if (hAxis == 1)
         {
             if (Input.GetKeyDown(KeyCode.Space))
@@ -80,6 +81,7 @@ public class PlayerController : MonoBehaviour {
                 rig.MovePosition(transform.position + movement * dashSpeed);
             }
         }
+        */
 
     }
 
