@@ -6,8 +6,6 @@ public class LevelManager : MonoBehaviour {
 
     //Grab health bar gameobject
     public GameObject healthBar;
-    //Grab player script
-    private PlayerController playerObject;
     private ItemPickUp itemObject;
 
 	// Use this for initialization
@@ -15,8 +13,6 @@ public class LevelManager : MonoBehaviour {
 
         //set healthbar gameobject
         healthBar = GameObject.Find("bar");
-        //grab the player script
-        playerObject = FindObjectOfType<PlayerController>();
         itemObject = FindObjectOfType<ItemPickUp>();
 
     }
