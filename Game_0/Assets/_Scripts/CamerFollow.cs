@@ -16,7 +16,7 @@ public class CamerFollow : MonoBehaviour {
         myCam = GetComponent<Camera>();
     }
 
-    private void Update()
+    void FixedUpdate()
     {
         myCam.orthographicSize = (Screen.height / 100f) / scaleNumber;
     }
